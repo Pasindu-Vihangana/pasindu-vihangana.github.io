@@ -1,0 +1,119 @@
+.expertise-section {
+  background: var(--color-bg);
+  color: #fff;
+  padding: 3.5rem 0 2.5rem 0;
+}
+
+.expertise-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.expertise-badge {
+  display: inline-block;
+  background: var(--color-card-bg);
+  color: var(--color-highlight);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.3rem 1.2rem;
+  border-radius: 1rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.expertise-title {
+  color: #fff;
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+}
+
+.expertise-subtitle {
+  color: #b0b8c1;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.expertise-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-items: stretch;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1100px) {
+  .expertise-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .expertise-cards {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+}
+
+.expertise-card {
+  background: var(--color-card-bg);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #fff;
+  border: 1px solid var(--color-border);
+  margin-bottom: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.expertise-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.28);
+  border-color: var(--color-highlight);
+}
+
+.expertise-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1.1rem;
+  color: var(--color-highlight);
+}
+
+.expertise-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.expertise-desc {
+  color: #e0e0e0;
+  font-size: 0.98rem;
+  margin-bottom: 1.1rem;
+  font-weight: 500;
+}
+
+.expertise-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.expertise-tag {
+  background: #23272f;
+  color: var(--color-highlight);
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: 0.7rem;
+  padding: 0.22rem 0.9rem;
+  margin-bottom: 0.2rem;
+} 
