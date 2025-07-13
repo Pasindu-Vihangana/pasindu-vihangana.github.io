@@ -9,6 +9,9 @@ const techs = [
   { name: 'Python', icon: 'https://www.svgrepo.com/show/354238/python.svg' },
   { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' },
   
+  { name: 'iOS', icon: 'https://www.svgrepo.com/show/508761/apple.svg' },
+  { name: 'Android', icon: 'https://www.svgrepo.com/show/475631/android-color.svg' },
+  
   { name: 'STM', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/ST_logo_2020_blue_V.svg/500px-ST_logo_2020_blue_V.svg.png' },
   { name: 'Espressif', icon: 'https://www.svgrepo.com/show/349355/espressif.svg' },
   { name: 'NordicSemi', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Nordic_Semiconductor_Company_Logo.svg/500px-Nordic_Semiconductor_Company_Logo.svg.png' },
