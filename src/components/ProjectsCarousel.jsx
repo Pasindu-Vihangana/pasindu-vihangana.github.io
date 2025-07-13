@@ -3,29 +3,43 @@ import './ProjectsCarousel.css';
 
 const projects = [
   {
-    title: 'Smart Home Controller',
-    description: 'A custom embedded system for home automation, featuring wireless sensor integration and mobile app control.',
+    title: 'Fitness Tracker',
+    description: 'A wireless perfomance monitor for tracking fitness metrics and progress for performance based athletics training.',
     image: '/assets/projects/smart-home.jpg',
     caseStudy: '#',
     website: '#',
   },
   {
-    title: 'Industrial IoT Gateway',
-    description: 'Rugged IoT gateway for industrial data acquisition and cloud analytics, supporting multiple protocols.',
+    title: 'Falcon Tracker',
+    description: 'A miniature tracking device capable of tracking locations of falconry birds over 32km+',
     image: '/assets/projects/iot-gateway.jpg',
     caseStudy: '#',
     website: '#',
   },
   {
-    title: 'Wearable Health Monitor',
-    description: 'Low-power wearable device for real-time health monitoring, Bluetooth sync, and cloud dashboard.',
+    title: 'Circuit Smith',
+    description: 'An AI assisted circuit design tool for developing circuits and firmware for microcontroller based projects.',
     image: '/assets/projects/wearable.jpg',
+    caseStudy: '#',
+    website: '#',
+  },
+  {
+    title: 'Garment Counter',
+    description: 'Machine-learning based automation solution to minimize manual garment counting errors.',
+    image: '/assets/projects/iot-gateway.jpg',
+    caseStudy: '#',
+    website: '#',
+  },
+  {
+    title: 'Astronaut Shoe',
+    description: 'A wireless health and activity monitor shoe that can invoke muscle stimuli to prevent muscle atrophy',
+    image: '/assets/projects/iot-gateway.jpg',
     caseStudy: '#',
     website: '#',
   },
 ];
 
-const AUTO_SCROLL_INTERVAL = 3000;
+const AUTO_SCROLL_INTERVAL = 6000;
 
 const ProjectsCarousel = () => {
   const [current, setCurrent] = useState(0);
@@ -55,24 +69,26 @@ const ProjectsCarousel = () => {
       <div className="carousel-header">
         <span className="carousel-badge">Featured Projects</span>
       </div>
-      <div className={`carousel-tile${fade ? ' fade' : ''}`}>
+      <div className="carousel-container">
         <button className="carousel-arrow left" onClick={prev} aria-label="Previous project">&#8592;</button>
-        <div className="carousel-image">
-          <img 
-            src={project.image || 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80'} 
-            alt={project.title} 
-            onError={e => {
-              e.target.onerror = null;
-              e.target.src = 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80';
-            }}
-          />
-        </div>
-        <div className="carousel-info">
-          <h3 className="carousel-project-title">{project.title}</h3>
-          <p className="carousel-project-desc">{project.description}</p>
-          <div className="carousel-buttons" style={{display: 'none'}}>
-            <a href={project.caseStudy} className="carousel-btn" target="_blank" rel="noopener noreferrer">View Case Study &#8594;</a>
-            <a href={project.website} className="carousel-btn secondary" target="_blank" rel="noopener noreferrer">Visit Website <span style={{fontSize:'1.1em'}}>↗</span></a>
+        <div className={`carousel-tile${fade ? ' fade' : ''}`}>
+          <div className="carousel-image">
+            <img
+              src={project.image || 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80'}
+              alt={project.title}
+              onError={e => {
+                e.target.onerror = null;
+                e.target.src = 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80';
+              }}
+            />
+          </div>
+          <div className="carousel-info">
+            <h3 className="carousel-project-title">{project.title}</h3>
+            <p className="carousel-project-desc">{project.description}</p>
+            <div className="carousel-buttons" style={{ display: 'none' }}>
+              <a href={project.caseStudy} className="carousel-btn" target="_blank" rel="noopener noreferrer">View Case Study &#8594;</a>
+              <a href={project.website} className="carousel-btn secondary" target="_blank" rel="noopener noreferrer">Visit Website <span style={{ fontSize: '1.1em' }}>↗</span></a>
+            </div>
           </div>
         </div>
         <button className="carousel-arrow right" onClick={next} aria-label="Next project">&#8594;</button>
@@ -82,7 +98,7 @@ const ProjectsCarousel = () => {
           <span key={idx} className={idx === current ? 'active' : ''} onClick={() => setCurrent(idx)}></span>
         ))}
       </div>
-      <div className="carousel-all-btn-wrap" style={{display: 'none'}}>
+      <div className="carousel-all-btn-wrap" style={{ display: 'none' }}>
         <a href="#projects" className="carousel-all-btn">View All Projects &#8594;</a>
       </div>
     </section>

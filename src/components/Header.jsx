@@ -26,8 +26,10 @@ const Header = () => {
         
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <ul className="nav-list">
+          <li><button onClick={() => scrollToSection('expertise')}>Expertise</button></li>
             <li><button onClick={() => scrollToSection('projects')}>Projects</button></li>
             <li><button onClick={() => scrollToSection('services')}>Services</button></li>
+            <li><button onClick={() => navigate('./certifications')}>Certifications</button></li>
             <li><button onClick={() => navigate('./about')}>About Me</button></li>
             <li><button onClick={() => scrollToSection('contact')} className="nav-link nav-link-highlight">Get in Touch</button></li>
           </ul>

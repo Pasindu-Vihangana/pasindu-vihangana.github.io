@@ -14,11 +14,9 @@ const Footer = () => {
           <div className="footer-col">
             <h3 className="footer-title">Services</h3>
             <ul className="footer-list">
-              <li>Embedded Systems</li>
-              <li>IoT Solutions</li>
-              <li>Firmware Development</li>
-              <li>Hardware Prototyping</li>
-              <li>Embedded Linux</li>
+              <li>Embedded Systems Designing</li>
+              <li>Mechanical Systems Designing</li>
+              <li>Application Development</li>
             </ul>
           </div>
           <div className="footer-col">

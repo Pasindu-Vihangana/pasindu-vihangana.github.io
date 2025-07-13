@@ -3,38 +3,52 @@ import './Services.css';
 
 const services = [
   {
-    icon: '🧠',
+    icon: '📟',
     title: 'Embedded Systems Design',
-    subtitle: 'Custom hardware and firmware solutions for real-world applications.',
+    subtitle: 'End-to-end embedded systems designing and development.',
     features: [
-      'Microcontroller & SoC integration',
-      'PCB design & prototyping',
-      'Real-time & low-power systems'
+      'CAD designing & prototyping',
+      'Firmware development',
+      'Real-time & low-power systems',
+      'Mobile application support'
     ],
     link: '#',
   },
   {
-    icon: '📡',
-    title: 'IoT Solutions',
-    subtitle: 'End-to-end IoT device development and connectivity.',
+    icon: '⚙️',
+    title: 'Mechanical Systems Design',
+    subtitle: 'Robust mechanical solutions from concept to manufacturing.',
     features: [
-      'Sensor interfacing & data acquisition',
-      'Wireless protocols (BLE, LoRa, WiFi)',
-      'Cloud & edge integration'
+      'CAD modeling & 3D printing',
+      'Prototype development',
+      'Manufacturing optimization',
+      'Structural analysis & testing'
     ],
     link: '#',
   },
   {
-    icon: '🛠️',
-    title: 'Firmware Development',
-    subtitle: 'Robust, efficient, and maintainable embedded software.',
+    icon: '📲',
+    title: 'Application Development',
+    subtitle: 'Cross-platform mobile and desktop applications for modern needs.',
     features: [
-      'C/C++ & Embedded C programming',
-      'RTOS & bare-metal systems',
-      'Debugging & optimization'
+      'Mobile app development (iOS/Android)',
+      'Desktop application development',
+      'Cross-platform solutions',
+      'User experience optimization'
     ],
     link: '#',
   },
+  // {
+  //   icon: '🧠',
+  //   title: 'AI Powered Solutions',
+  //   subtitle: 'Robust and efficient, hardware and software solutions for real-world applications.',
+  //   features: [
+  //     'Research & Development',
+  //     'Proof of Concept',
+  //     'Iterative Refinement'
+  //   ],
+  //   link: '#',
+  // },
 ];
 
 const Services = () => (
@@ -43,14 +57,16 @@ const Services = () => (
       <span className="services-badge">Services</span>
       <h2 className="services-title">What I Deliver</h2>
       <p className="services-subtitle">
-        Results-focused solutions tailored to your specific engineering needs
+        Robust and efficient, hardware and software solutions for real-world applications.
       </p>
     </div>
     <div className="services-cards">
       {services.map((service, idx) => (
         <div className="service-card" key={idx}>
-          <div className="service-icon">{service.icon}</div>
-          <h3 className="service-name">{service.title}</h3>
+          <div className="service-icon">
+            {service.icon}
+            <h1 className="service-name">{service.title}</h1>
+          </div>
           <p className="service-desc">{service.subtitle}</p>
           <ul className="service-features">
             {service.features.map((f, i) => (

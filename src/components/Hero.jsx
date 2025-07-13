@@ -9,7 +9,7 @@ const Hero = () => {
   const texts = [
     'Embedded Systems Engineer',
     'Firmware Developer',
-    'Hardware Enthusiast'
+    'Hardware Designer'
   ];
 
   useEffect(() => {
