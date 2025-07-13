@@ -14,20 +14,16 @@ const Footer = () => {
           <div className="footer-col">
             <h3 className="footer-title">Services</h3>
             <ul className="footer-list">
-              <li>Embedded Systems Designing</li>
-              <li>Mechanical Systems Designing</li>
-              <li>Application Development</li>
+              <a href="/contact"><li>Embedded Systems Designing</li></a>
+              <a href="/contact"><li>Mechanical Systems Designing</li></a>
+              <a href="/contact"><li>Application Development</li></a>
             </ul>
           </div>
           <div className="footer-col">
-            <h3 className="footer-title">Tools</h3>
-            <ul className="footer-list">
-              <li>PCB Design</li>
-              <li>RTOS</li>
-              <li>Cloud Integration</li>
-              <li>Debugging</li>
-              <li>Security Testing</li>
-            </ul>
+            <h3 className="footer-title">Expertise</h3>
+            <a href="/projects"><h3 className="footer-title">Projects</h3></a>
+            <h3 className="footer-title">Certifications</h3>
+            <h3 className="footer-title">About Me</h3>
           </div>
           <div className="footer-col">
             <h3 className="footer-title">Connect</h3>

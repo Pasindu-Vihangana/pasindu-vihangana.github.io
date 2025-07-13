@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -29,9 +30,9 @@ const Header = () => {
           <li><button onClick={() => scrollToSection('expertise')}>Expertise</button></li>
             <li><button onClick={() => scrollToSection('projects')}>Projects</button></li>
             <li><button onClick={() => scrollToSection('services')}>Services</button></li>
-            <li><button onClick={() => navigate('./certifications')}>Certifications</button></li>
-            <li><button onClick={() => navigate('./about')}>About Me</button></li>
-            <li><button onClick={() => scrollToSection('contact')} className="nav-link nav-link-highlight">Get in Touch</button></li>
+            <li><button onClick={() => navigate('/certifications')}>Certifications</button></li>
+            <li><button onClick={() => navigate('/about')}>About Me</button></li>
+            <li><Link to="/contact" className="nav-link nav-link-highlight">Get in Touch</Link></li>
           </ul>
         </nav>
 
