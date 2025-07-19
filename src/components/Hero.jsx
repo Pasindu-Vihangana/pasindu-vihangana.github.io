@@ -5,7 +5,7 @@ const Hero = () => {
   const [currentText, setCurrentText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  
+
   const texts = [
     'Embedded Systems Engineer',
     'Firmware Developer',
@@ -15,7 +15,7 @@ const Hero = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       const currentTextValue = texts[currentIndex];
-      
+
       if (!isDeleting) {
         if (currentTextValue.length > currentText.length) {
           setCurrentText(currentTextValue.slice(0, currentText.length + 1));
@@ -55,16 +55,16 @@ const Hero = () => {
               <span className="cursor">|</span>
             </h2>
             <p className="hero-description">
-              Passionate Embedded Systems Engineer with a strong background in designing, developing, and deploying innovative hardware and firmware solutions. Experienced in IoT, microcontrollers, PCB design, and real-world problem solving.
+              
             </p>
             <div className="hero-buttons">
-              <button 
+              <button
                 className="btn btn-primary"
                 onClick={() => scrollToSection('projects')}
               >
                 View My Work
               </button>
-              <button 
+              <button
                 className="btn btn-secondary"
                 onClick={() => scrollToSection('contact')}
               >
@@ -72,7 +72,7 @@ const Hero = () => {
               </button>
             </div>
           </div>
-          
+
           <div className="hero-image">
             <div className="profile-card">
               <div className="profile-image">
@@ -97,10 +97,6 @@ const Hero = () => {
               </div>
             </div>
           </div>
-        </div>
-        
-        <div className="scroll-indicator">
-          <div className="scroll-arrow"></div>
         </div>
       </div>
     </section>
