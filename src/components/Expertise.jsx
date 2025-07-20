@@ -3,46 +3,46 @@ import './Expertise.css';
 
 const expertise = [
   {
-    icon: '⚡',
-    title: 'Hardware Prototyping',
-    desc: 'Rapid prototyping, soldering, and hardware bring-up for proof-of-concept and production.',
-    tags: ['Prototyping', 'Soldering', 'Bring-up', 'Testing'],
-    image: 'assets/expertise/hardware-prototyping.jpg',
-  },
-  {
-    icon: '📡',
-    title: 'IoT Solutions',
-    desc: 'End-to-end IoT device development, sensor interfacing, wireless protocols, and cloud integration.',
-    tags: ['MQTT', 'BLE', 'LoRaWAN', 'WiFi', 'Cloud'],
-    image: 'assets/expertise/iot-solutions.jpg',
-  },
-  {
     icon: '👨🏻‍💻',
     title: 'Firmware Development',
     desc: 'Robust, efficient, and maintainable embedded software. C/C++, debugging, and optimization.',
-    tags: ['C/C++', 'Debugging', 'Optimization', 'Bare Metal'],
+    tags: ['C/C++', 'Debugging', 'Optimization', 'Arduino', 'Nordic Semiconductors', 'STM', 'ESP', 'PlatformIO'],
     image: 'assets/expertise/firmware-dev.jpg',
   },
   {
-    icon: '⚡',
-    title: 'Embedded Systems Design',
-    desc: 'Custom hardware and firmware for real-world applications. Microcontroller & SoC integration, PCB design, and real-time systems.',
-    tags: ['Microcontrollers', 'PCB Design', 'RTOS', 'Low Power'],
-    image: 'assets/expertise/embedded-systems.jpg',
-  },
-  {
-    icon: '🐧',
-    title: 'Embedded Linux',
-    desc: 'Linux BSP, device drivers, and application development for embedded platforms.',
-    tags: ['Linux', 'Device Drivers', 'BSP', 'Shell'],
+    icon: '📈',
+    title: 'Digital Signal Processing',
+    desc: '',
+    tags: ['Kalman Filter', 'Mahony Filter', 'Low-Pass', 'High-Pass', 'Band-Pass', 'IIR', 'FIR'],
     image: 'assets/expertise/embedded-linux.jpg',
   },
   {
     icon: '🤖',
-    title: 'AI Powered Solutions',
-    desc: 'Robust and efficient, hardware and software solutions for real-world applications.',
+    title: 'AI Assisted Solutions',
+    desc: '',
     tags: ['R&D', 'Proof of Concept', 'Iterative Refinement'],
     image: 'assets/expertise/default-expertise.jpg',
+  },
+  {
+    icon: '📲',
+    title: 'IoT Solutions',
+    desc: 'End-to-end IoT device development, sensor interfacing, wireless protocols, and application integration.',
+    tags: ['BLE', 'WiFi', 'LoRaWAN', 'MQTT', 'Cloud'],
+    image: 'assets/expertise/iot-solutions.jpg',
+  },
+  {
+    icon: '⚙️',
+    title: 'Mechanical Systems Designing',
+    desc: '',
+    tags: ['3D Modeling', '3D Printing'],
+    image: 'assets/expertise/embedded-systems.jpg',
+  },
+  {
+    icon: '🕹',
+    title: 'Rapid Prototyping',
+    desc: 'Hardware made from proof-of-concept to production.',
+    tags: ['Soldering', 'Wiring', 'Prototyping', 'Crafting'],
+    image: 'assets/expertise/prototyping.jpg',
   },
 ];
 
@@ -85,7 +85,7 @@ const Expertise = () => {
       <div className="expertise-container">
         <div className="expertise-list">
           {expertise.map((item, idx) => (
-            <div 
+            <div
               className={`expertise-list-item ${activeExpertise === idx ? 'active' : ''}`}
               key={idx}
               onMouseEnter={() => handleExpertiseHover(idx)}
@@ -107,8 +107,8 @@ const Expertise = () => {
           {currentExpertise ? (
             <div className="expertise-detail-content">
               <div className="expertise-detail-image">
-                <img 
-                  src={currentExpertise.image} 
+                <img
+                  src={currentExpertise.image}
                   alt={currentExpertise.title}
                   onError={e => {
                     e.target.onerror = null;
@@ -130,8 +130,8 @@ const Expertise = () => {
           ) : (
             <div className="expertise-default-content">
               <div className="expertise-default-image">
-                <img 
-                  src="assets/expertise/default-expertise.jpg" 
+                <img
+                  src="assets/expertise/default-expertise.jpg"
                   alt="Expertise Overview"
                   onError={e => {
                     e.target.onerror = null;
