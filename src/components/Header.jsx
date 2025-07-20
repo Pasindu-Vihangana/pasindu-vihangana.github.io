@@ -24,14 +24,14 @@ const Header = () => {
         <div className="logo">
           <h2><Link to="/" className="logo-link">Pasindu Vihangana</Link></h2>
         </div>
-        
+
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <ul className="nav-list">
-          <li><button onClick={() => scrollToSection('expertise')}>Expertise</button></li>
-            <li><button onClick={() => scrollToSection('projects')}>Projects</button></li>
-            <li><button onClick={() => scrollToSection('services')}>Services</button></li>
-            <li><button onClick={() => navigate('/certifications')}>Certifications</button></li>
-            <li><button onClick={() => navigate('/about')}>About Me</button></li>
+            <li><Link to="/#expertise" className="nav-link" onClick={() => setIsMenuOpen(false)} >Expertise</Link></li>
+            <li><Link to="/projects" className="nav-link" onClick={() => setIsMenuOpen(false)} >Projects</Link></li>
+            <li><Link to="/#services" className="nav-link" onClick={() => setIsMenuOpen(false)} >Services</Link></li>
+            <li><Link to="/certifications" className="nav-link" onClick={() => setIsMenuOpen(false)} >Certifications</Link></li>
+            <li><Link to="/about" className="nav-link" onClick={() => setIsMenuOpen(false)} >About Me</Link></li>
             <li><Link to="/contact" className="nav-link nav-link-highlight">Get in Touch</Link></li>
           </ul>
         </nav>
