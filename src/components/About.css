@@ -193,6 +193,7 @@
   padding: 6rem 0;
   background: var(--color-bg);
   color: #fff;
+  overflow: visible;
 }
 
 .timeline-container {
@@ -200,6 +201,8 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 0;
+  min-height: auto;
+  overflow: visible;
 }
 
 .timeline-line {
@@ -210,11 +213,12 @@
   width: 3px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   transform: translateX(-50%);
+  height: 100%;
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
   opacity: 0;
   transform: translateY(50px);
   transition: all 0.6s ease;
@@ -277,6 +281,13 @@
   margin: 0 0 0.5rem 0;
 }
 
+.timeline-card h4 p {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #ccc;
+  margin: 0.2rem 0 0.5rem 0;
+}
+
 .timeline-card h5 {
   font-size: 1.1rem;
   font-weight: 500;
@@ -288,7 +299,11 @@
   font-size: 1rem;
   line-height: 1.6;
   color: #e0e0e0;
-  margin: 0;
+  margin: 0 0 0.5rem 0;
+}
+
+.timeline-card p:last-child {
+  margin-bottom: 0;
 }
 
 @media (max-width: 768px) {
