@@ -116,8 +116,8 @@
 }
 
 .portrait-image {
-  width: 300px;
-  height: 300px;
+  width: 480px;
+  height: 480px;
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto;
@@ -127,7 +127,7 @@
 }
 
 .portrait-image:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .portrait-image img {
@@ -242,8 +242,33 @@
   background: var(--color-card-bg);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--color-border);
+  filter: brightness(0.85) grayscale(0.15);
+  transition: 
+    filter 0.35s cubic-bezier(0.4,0,0.2,1),
+    box-shadow 0.35s cubic-bezier(0.4,0,0.2,1),
+    border-color 0.35s cubic-bezier(0.4,0,0.2,1),
+    background 0.35s cubic-bezier(0.4,0,0.2,1),
+    transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  cursor: pointer;
+  will-change: transform, filter, box-shadow;
+}
+
+.timeline-content:hover,
+.timeline-item.animate-in .timeline-content:hover {
+  filter: brightness(1.12) grayscale(0);
+  background: var(--color-card-bg);
+  box-shadow: 0 8px 32px 0 rgba(102, 126, 234, 0.25), 0 0 0 3px var(--color-highlight);
+  border-color: var(--color-highlight);
+  z-index: 2;
+  transform: scale(1.05);
+}
+
+.timeline-content:active {
+  filter: brightness(1.15) grayscale(0);
+  box-shadow: 0 12px 36px 0 rgba(102, 126, 234, 0.35), 0 0 0 4px var(--color-highlight);
+  transform: scale(1.03);
 }
 
 .timeline-item.left .timeline-content {
@@ -323,11 +348,6 @@
 
   .values-grid {
     grid-template-columns: 1fr;
-  }
-
-  .portrait-image {
-    width: 250px;
-    height: 250px;
   }
 
   .timeline-line {
