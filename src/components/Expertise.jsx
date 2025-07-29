@@ -5,44 +5,44 @@ const expertise = [
   {
     icon: '👨🏻‍💻',
     title: 'Firmware Development',
-    desc: 'Robust, efficient, and maintainable embedded software. C/C++, debugging, and optimization.',
+    desc: 'Development of robust, efficient, and maintainable embedded firmware using C/C++. Expertise in debugging, optimization, and hardware integration.',
     tags: ['C/C++', 'Debugging', 'Optimization', 'Arduino', 'Nordic Semiconductors', 'STM', 'ESP', 'PlatformIO'],
-    image: 'assets/expertise/firmware-dev.jpg',
+    image: 'assets/expertise/firmware-dev.gif',
   },
   {
     icon: '📈',
     title: 'Digital Signal Processing',
-    desc: '',
-    tags: ['Kalman Filter', 'Mahony Filter', 'Low-Pass', 'High-Pass', 'Band-Pass', 'IIR', 'FIR'],
-    image: 'assets/expertise/embedded-linux.jpg',
+    desc: 'Design and implementation of advanced signal processing algorithms for real-time embedded systems, including filtering, estimation, and sensor fusion.',
+    tags: ['Kalman Filter', 'Mahony Filter', 'IIR', 'FIR'],
+    image: 'assets/expertise/dsp.gif',
   },
   {
-    icon: '🤖',
-    title: 'AI Assisted Solutions',
-    desc: '',
-    tags: ['R&D', 'Proof of Concept', 'Iterative Refinement'],
-    image: 'assets/expertise/default-expertise.jpg',
+    icon: '🫆',
+    title: 'Computer Vision Algorithms',
+    desc: 'Development of computer vision solutions for object detection, tracking, and augmented/virtual reality applications, leveraging iterative prototyping and R&D.',
+    tags: ['AR', 'VR', 'R&D', 'Proof of Concept', 'Iterative Refinement'],
+    image: 'assets/expertise/computer-vision.gif',
   },
   {
     icon: '📲',
     title: 'IoT Solutions',
-    desc: 'End-to-end IoT device development, sensor interfacing, wireless protocols, and application integration.',
+    desc: 'Comprehensive IoT device development, including sensor integration, wireless communication (BLE, WiFi, LoRaWAN), and seamless cloud connectivity.',
     tags: ['BLE', 'WiFi', 'LoRaWAN', 'MQTT', 'Cloud'],
-    image: 'assets/expertise/iot-solutions.jpg',
+    image: 'assets/expertise/iot-solutions.gif',
   },
   {
     icon: '⚙️',
-    title: 'Mechanical Systems Designing',
-    desc: '',
-    tags: ['3D Modeling', '3D Printing'],
-    image: 'assets/expertise/embedded-systems.jpg',
+    title: 'Hardware Systems Designing',
+    desc: 'Design and prototyping of hardware systems from proof-of-concept to mass production, including PCB design, 3D modeling, and rapid prototyping.',
+    tags: ['3D Modeling', '3D Printing', 'PCB Designing', 'Soldering', 'Wiring', 'Prototyping', 'Crafting'],
+    image: 'assets/expertise/hardware.gif',
   },
   {
-    icon: '🕹',
-    title: 'Rapid Prototyping',
-    desc: 'Hardware made from proof-of-concept to production.',
-    tags: ['Soldering', 'Wiring', 'Prototyping', 'Crafting'],
-    image: 'assets/expertise/prototyping.jpg',
+    icon: '🧠',
+    title: 'AI Assisted Solutions',
+    desc: 'Integrating AI and large language models to automate workflows, enhance productivity, and deliver intelligent, context-aware solutions.',
+    tags: ['LLM', 'Prompt Engineering', 'GPT Wrappers'],
+    image: 'assets/expertise/ai-solutions.gif',
   },
 ];
 
@@ -112,13 +112,13 @@ const Expertise = () => {
                   alt={currentExpertise.title}
                   onError={e => {
                     e.target.onerror = null;
-                    e.target.src = 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80';
+                    e.target.src = 'assets/expertise/default-expertise.jpg';
                   }}
                 />
               </div>
               <div className="expertise-detail-info">
-                <div className="expertise-detail-icon">{currentExpertise.icon}</div>
-                <h3 className="expertise-detail-title">{currentExpertise.title}</h3>
+                {/* <h3 className="expertise-detail-icon">{currentExpertise.icon}</h3> */}
+                <h3 className="expertise-detail-title">{currentExpertise.icon} {currentExpertise.title}</h3>
                 <p className="expertise-detail-desc">{currentExpertise.desc}</p>
                 <div className="expertise-detail-tags">
                   {currentExpertise.tags.map((tag, i) => (
@@ -135,13 +135,13 @@ const Expertise = () => {
                   alt="Expertise Overview"
                   onError={e => {
                     e.target.onerror = null;
-                    e.target.src = 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80';
+                    e.target.src = 'assets/expertise/default-expertise.jpg';
                   }}
                 />
               </div>
               <div className="expertise-default-text">
-                <h3>Hover over an expertise to see details</h3>
-                <p>Explore my technical skills and experience areas</p>
+                <h3>Explore my technical skills and experience areas</h3>
+                <p>Hover over an expertise to see details</p>
               </div>
             </div>
           )}
