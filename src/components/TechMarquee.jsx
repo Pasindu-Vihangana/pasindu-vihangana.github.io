@@ -4,8 +4,8 @@ import './TechMarquee.css';
 const techs = [
   { name: 'Solidworks', icon: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/SolidWorks_Logo.svg/2880px-SolidWorks_Logo.svg.png' },
 
-  { name: 'C/C++', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
-  { name: 'Embedded C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
+  { name: 'Embedded C', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/760px-C_Programming_Language.svg.png' },
+  { name: 'C/C++', icon: 'https://cdn-icons-png.flaticon.com/512/6132/6132222.png' },
   { name: 'Python', icon: 'https://www.svgrepo.com/show/354238/python.svg' },
   { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' },
   
