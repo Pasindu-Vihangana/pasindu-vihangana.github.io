@@ -79,7 +79,7 @@ const Expertise = () => {
     <section id="expertise" className="expertise-section">
       <div className="expertise-header">
         <span className="expertise-badge">My Expertise</span>
-        <h2 className="expertise-title">Delivering Measurable Results</h2>
+        <h2 className="expertise-title">Bringing ideas to reality</h2>
         <p className="expertise-subtitle">Strategic thinking and technical excellence for embedded, IoT, and firmware projects</p>
       </div>
       <div className="expertise-container">

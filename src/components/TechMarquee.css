@@ -2,7 +2,7 @@
   width: 100vw;
   overflow: hidden;
   background: var(--color-bg, #181a1b);
-  padding: 1.2rem 0 1rem 0;
+  padding: 2rem 0 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,7 +25,7 @@
 .tech-marquee-icon-wrap {
   background: #23272f;
   border-radius: 12px;
-  padding: 0.7rem;
+  padding: 0.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,8 +34,8 @@
 }
 
 .tech-marquee-icon {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
   filter: brightness(1.2) drop-shadow(0 0 2px #222);
 }
@@ -43,10 +43,14 @@
 .tech-marquee-label {
   color: #fff;
   font-size: 0.85rem;
+  max-width: 80px;
   margin-top: 0.1rem;
   text-align: center;
   font-weight: 500;
   letter-spacing: 0.01em;
+  white-space: normal;
+  max-width: 90px;
+  word-break: break-word;
 }
 
 @keyframes marquee {
