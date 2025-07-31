@@ -1,50 +1,60 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './ProjectsCarousel.css';
 
 const projects = [
+
   {
     title: 'Fitness Tracker',
     description: 'A wireless perfomance monitor for tracking fitness metrics and progress for performance based athletics training.',
-    image: '/assets/projects/smart-home.jpg',
+    image: 'assets/projects/fitness-tracker-landing.jpg',
     caseStudy: '#',
     website: '#',
   },
   {
     title: 'Falcon Tracker',
     description: 'A miniature tracking device capable of tracking locations of falconry birds over 32km+',
-    image: '/assets/projects/iot-gateway.jpg',
-    caseStudy: '#',
-    website: '#',
-  },
-  {
-    title: 'Circuit Smith',
-    description: 'An AI assisted circuit design tool for developing circuits and firmware for microcontroller based projects.',
-    image: '/assets/projects/wearable.jpg',
+    image: 'assets/projects/falcon-tracker-landing.jpg',
     caseStudy: '#',
     website: '#',
   },
   {
     title: 'Garment Counter',
     description: 'Machine-learning based automation solution to minimize manual garment counting errors.',
-    image: '/assets/projects/iot-gateway.jpg',
+    image: 'assets/projects/garment-counter.gif',
+    caseStudy: '#',
+    website: '#',
+  },
+  {
+    title: 'Circuit Smith',
+    description: 'An AI assisted circuit design tool for developing circuits and firmware for microcontroller based projects.',
+    image: 'assets/projects/circuit-smith.avif',
     caseStudy: '#',
     website: '#',
   },
   {
     title: 'Astronaut Shoe',
     description: 'A wireless health and activity monitor shoe that can invoke muscle stimuli to prevent muscle atrophy',
-    image: '/assets/projects/iot-gateway.jpg',
+    image: 'assets/projects/space-shoe-landing.jpg',
     caseStudy: '#',
     website: '#',
   },
 ];
 
-const AUTO_SCROLL_INTERVAL = 6000;
+const AUTO_SCROLL_INTERVAL = 8000;
 
 const ProjectsCarousel = () => {
   const [current, setCurrent] = useState(0);
   const [fade, setFade] = useState(false);
   const total = projects.length;
+  const timerRef = useRef(null);
+
+  // Helper to start the timer
+  const startTimer = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % total);
+    }, AUTO_SCROLL_INTERVAL);
+  };
 
   useEffect(() => {
     setFade(true);
@@ -53,14 +63,32 @@ const ProjectsCarousel = () => {
   }, [current]);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % total);
-    }, AUTO_SCROLL_INTERVAL);
-    return () => clearInterval(timer);
+    startTimer();
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
   }, [total]);
 
-  const prev = () => setCurrent((current - 1 + total) % total);
-  const next = () => setCurrent((current + 1) % total);
+  // Reset timer and change project
+  const prev = () => {
+    setCurrent((current) => {
+      const newCurrent = (current - 1 + total) % total;
+      return newCurrent;
+    });
+    startTimer();
+  };
+  const next = () => {
+    setCurrent((current) => {
+      const newCurrent = (current + 1) % total;
+      return newCurrent;
+    });
+    startTimer();
+  };
+
+  const handleIndicatorClick = (idx) => {
+    setCurrent(idx);
+    startTimer();
+  };
 
   const project = projects[current];
 
@@ -95,7 +123,7 @@ const ProjectsCarousel = () => {
       </div>
       <div className="carousel-indicators">
         {projects.map((_, idx) => (
-          <span key={idx} className={idx === current ? 'active' : ''} onClick={() => setCurrent(idx)}></span>
+          <span key={idx} className={idx === current ? 'active' : ''} onClick={() => handleIndicatorClick(idx)}></span>
         ))}
       </div>
       <div className="carousel-all-btn-wrap" style={{ display: 'none' }}>
