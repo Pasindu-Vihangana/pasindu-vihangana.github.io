@@ -20,6 +20,13 @@ const redirectPlugin = {
 };
 
 export default defineConfig({
+  build: {
+    outDir: "docs", // 👈 GitHub Pages requires /docs or / (root)
+  },
   plugins: [react(), redirectPlugin],
   base: '/pasindu-vihangana.github.io/',
+  server: {
+    port: 5173,
+    open: true,
+  },
 })
