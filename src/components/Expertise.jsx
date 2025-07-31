@@ -49,16 +49,31 @@ const expertise = [
 const Expertise = () => {
   const [activeExpertise, setActiveExpertise] = useState(null);
   const [tileHeight, setTileHeight] = useState(500);
+  const [isHovering, setIsHovering] = useState(false);
+  const [autoIndex, setAutoIndex] = useState(0);
+
+  // Auto-cycle effect
+  React.useEffect(() => {
+    if (isHovering) return; // Pause cycling on hover
+    const interval = setInterval(() => {
+      setAutoIndex(prev => (prev + 1) % expertise.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [isHovering]);
+
+  // When not hovering, show autoIndex; when hovering, show hovered
+  const currentIdx = activeExpertise !== null ? activeExpertise : autoIndex;
+  const currentExpertise = expertise[currentIdx];
 
   const handleExpertiseHover = (index) => {
     setActiveExpertise(index);
+    setIsHovering(true);
   };
 
   const handleExpertiseLeave = () => {
     setActiveExpertise(null);
+    setIsHovering(false);
   };
-
-  const currentExpertise = activeExpertise !== null ? expertise[activeExpertise] : null;
 
   // Update tile height to match list height
   React.useEffect(() => {
@@ -86,7 +101,7 @@ const Expertise = () => {
         <div className="expertise-list">
           {expertise.map((item, idx) => (
             <div
-              className={`expertise-list-item ${activeExpertise === idx ? 'active' : ''}`}
+              className={`expertise-list-item ${currentIdx === idx ? 'active' : ''}`}
               key={idx}
               onMouseEnter={() => handleExpertiseHover(idx)}
               onMouseLeave={handleExpertiseLeave}
